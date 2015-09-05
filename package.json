@@ -1,5 +1,5 @@
 {
-  "name": "satw-yo-comic-notfier",
+  "name": "yo-rss-feed",
   "version": "0.0.1",
   "dependencies": {
     "bluebird": "^2.9.34",
