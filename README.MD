@@ -38,7 +38,8 @@ If you don't specify an option the default value will be used.
 The default cache-file will be created in the same folder as the "App.js" script and will be named "application.cache".
 
 The application will start an HTTP server on your computer when you run the script to receive webhook callbacks from YO.
-It is recommended to change the endpoint to a random value like "/webhook/3B1D46D9A30B1900E301337F1E66A738".
+It is recommended to change the endpoint to a random value like "/webhook/3B1D46D9A30B190".
+
 **Everybody who knows your endpoint URL can send YO messages to your users. Make sure to keep it secret!**
 
 Now enter your API key into the configuration file and configure the Callback URL in the YO dashboard to point to your
