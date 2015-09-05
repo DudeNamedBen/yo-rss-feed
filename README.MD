@@ -44,3 +44,17 @@ It is recommended to change the endpoint to a random value like "/webhook/3B1D46
 
 Now enter your API key into the configuration file and configure the Callback URL in the YO dashboard to point to your
 servers secret callback endpoint.
+
+Finally run
+
+    npm install
+
+in your folder to install all needed dependencies.
+
+
+You can run the script by executing
+
+    node Bootstrap.js
+    
+in your folder. Please note that the script will not start itself as a daemon if you want that you can use
+something like pm2 to start the script.
