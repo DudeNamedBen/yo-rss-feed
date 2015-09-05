@@ -44,6 +44,3 @@ It is recommended to change the endpoint to a random value like "/webhook/3B1D46
 
 Now enter your API key into the configuration file and configure the Callback URL in the YO dashboard to point to your
 servers secret callback endpoint.
-
-That's it now you can run your script and every time a new article is published into the specified RSS feed
-your users will get a notification with the article URL.
