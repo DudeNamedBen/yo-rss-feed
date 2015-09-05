@@ -1,0 +1,19 @@
+{
+  "name": "satw-yo-comic-notfier",
+  "version": "0.0.1",
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "concat-stream": "^1.5.0",
+    "express": "^4.13.3",
+    "feed-read": "0.0.1",
+    "filed": "^0.1.0",
+    "log": "^1.4.0",
+    "moment": "^2.10.6",
+    "nconf": "^0.7.2",
+    "ramda": "0.17.1",
+    "schedule": "^0.1.0",
+    "traceur": "0.0.91",
+    "traceur-source-maps": "^1.0.6",
+    "yo-api2": "0.0.2"
+  }
+}
