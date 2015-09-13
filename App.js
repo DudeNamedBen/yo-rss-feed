@@ -3,7 +3,6 @@
 ////////////////////////////////////////////////////////////////////
 
 var nconf = require('nconf');
-var every = require('schedule').every;
 var express = require('express');
 var FeedReader = require('./lib/FeedReader');
 
@@ -39,8 +38,8 @@ var execReader = () => {
 };
 
 //schedule FeedReader execution
-let minutes = nconf.get('update-interval') + 'm';
-every(minutes).do(execReader);
+let minutes = nconf.get('update-interval');
+setInterval(execReader, (minutes * 60 * 1000));
 execReader();
 
 //listen for YOs

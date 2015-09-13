@@ -11,7 +11,6 @@
     "moment": "^2.10.6",
     "nconf": "^0.7.2",
     "ramda": "0.17.1",
-    "schedule": "^0.1.0",
     "traceur": "0.0.91",
     "traceur-source-maps": "^1.0.6",
     "yo-api2": "0.0.2"
