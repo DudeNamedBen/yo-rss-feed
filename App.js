@@ -1,7 +1,3 @@
-////////////////////////////////////////////////////////////////////
-//Warning: Do not run this file directly, run Bootstrap.js instead!/
-////////////////////////////////////////////////////////////////////
-
 var nconf = require('nconf');
 var express = require('express');
 var FeedReader = require('./lib/FeedReader');
@@ -28,17 +24,19 @@ var yo = require('yo-api2')(nconf.get('api-key'));
 var reader = new FeedReader(nconf.get('feed-url'), nconf.get('cache-file'));
 
 //run the FeedReader and yo all subscribers
-var execReader = () => {
-    reader.run().then((link) => {
-        if(link !== null) {
-            console.log(`Sending link ${link} to subscribers...`);
+var execReader = function () {
+    reader.run().then(function (link) {
+        if (link !== null) {
+            console.log('Sending link ' + link + ' to subscribers...');
             yo('all', link);
         }
-    }).catch((err) => console.log(err));
+    }).catch(function (err) {
+        console.log(err);
+    });
 };
 
 //schedule FeedReader execution
-let minutes = nconf.get('update-interval');
+var minutes = nconf.get('update-interval');
 setInterval(execReader, (minutes * 60 * 1000));
 execReader();
 
@@ -47,16 +45,21 @@ var app = express();
 var port = nconf.get('http:port');
 var route = nconf.get('http:endpoint');
 
-app.get(route, (req, resp) => {
-    let username = req.query.username;
+app.get(route, function (req, resp) {
+    var username = req.query.username;
     if (typeof username === 'string' && username !== 'all') {
         reader.getCurrentLink()
-            .then((link) => yo(username, link))
-            .catch((err) => console.log(err));
+            .then(function (link) {
+                yo(username, link);
+            }).catch(function (err) {
+                console.log(err);
+            });
         resp.send('OK');
     } else {
         resp.send('INVALID USERNAME');
     }
 });
 
-app.listen(port, () => console.log(`App is listening on port ${port}`));
+app.listen(port, function () {
+    console.log('App is listening on port ' + port);
+});

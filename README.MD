@@ -54,7 +54,7 @@ in your folder to install all needed dependencies.
 
 You can run the script by executing
 
-    node Bootstrap.js
+    node App.js
     
 in your folder. Please note that the script will not start itself as a daemon if you want that you can use
 something like pm2 to start the script.
