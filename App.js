@@ -33,11 +33,11 @@ var reader = new FeedReader(nconf.get('feed-url'), nconf.get('cache-file'));
 var execReader = function () {
     reader.run().then(function (link) {
         if (link !== null) {
-            console.log('Sending link ' + link + ' to subscribers...');
+            log.info('Sending link ' + link + ' to subscribers...');
             yo('all', link);
         }
     }).catch(function (err) {
-        console.log(err);
+        log.error(err);
     });
 };
 
@@ -68,7 +68,7 @@ app.get(route, function (req, resp) {
 });
 
 app.listen(port, function () {
-    console.log('App is listening on port ' + port);
+    log.info('App is listening on port ' + port);
 });
 
 module.exports = app;
