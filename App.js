@@ -1,6 +1,12 @@
+"use strict";
+
 var nconf = require('nconf');
 var express = require('express');
+var Log = require('log');
 var FeedReader = require('./lib/FeedReader');
+
+//create logger
+var log = new Log('info');
 
 //load configuration
 nconf.argv()
@@ -50,16 +56,19 @@ app.get(route, function (req, resp) {
     if (typeof username === 'string' && username !== 'all') {
         reader.getCurrentLink()
             .then(function (link) {
+                log.info("Direct link requested from: " + username);
                 yo(username, link);
             }).catch(function (err) {
-                console.log(err);
+                log.error(err);
             });
         resp.send('OK');
     } else {
-        resp.send('INVALID USERNAME');
+        resp.send('INVALID_USERNAME');
     }
 });
 
 app.listen(port, function () {
     console.log('App is listening on port ' + port);
 });
+
+module.exports = app;

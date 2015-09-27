@@ -1,6 +1,6 @@
 {
   "name": "yo-rss-feed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "bluebird": "^2.9.34",
     "concat-stream": "^1.5.0",
@@ -8,11 +8,16 @@
     "feed-read": "0.0.1",
     "filed": "^0.1.0",
     "log": "^1.4.0",
-    "moment": "^2.10.6",
     "nconf": "^0.7.2",
     "ramda": "0.17.1",
-    "traceur": "0.0.91",
-    "traceur-source-maps": "^1.0.6",
     "yo-api2": "0.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-mocha-test": "^0.12.7",
+    "supertest": "^1.1.0"
   }
 }
