@@ -58,3 +58,12 @@ You can run the script by executing
     
 in your folder. Please note that the script will not start itself as a daemon if you want that you can use
 something like pm2 to start the script.
+
+Tests
+-----
+
+To run the included unit tests and lint the project run
+
+    grunt
+    
+in the project folder. Note that you need to install the dev-dependencies and have grunt-cli installed on your system.
